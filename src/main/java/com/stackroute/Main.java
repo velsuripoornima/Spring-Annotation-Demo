@@ -19,6 +19,8 @@ public class Main {
 
         System.out.println(movie == movie1);
 
+        ((AnnotationConfigApplicationContext)context).close();
+
 
     }
 }
