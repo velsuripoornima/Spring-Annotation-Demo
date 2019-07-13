@@ -5,7 +5,6 @@ import org.springframework.context.annotation.*;
 
 
 @Configuration
-@PropertySource(value = "classpath:actorinfo.properties")
 public class MovieConfig {
 
     @Bean
@@ -14,13 +13,12 @@ public class MovieConfig {
        return new Actor("ram","male",21);
     }
 
-    @Bean(name = {"ramMovie","ramMovie1"})
-    @Scope("prototype")
+    @Bean
 
     public Movie ram()
     {
 
-        return new Movie(actorBean());
+        return new Movie();
     }
 
 //    @Bean
