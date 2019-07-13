@@ -1,40 +1,28 @@
 package com.stackroute.domain;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
+
 import org.springframework.stereotype.Component;
 
 @Component
 
 public class Actor {
 
-    @Value("${actor.name}")
     private String name;
 
-    @Value("${actor.gender}")
     private String gender;
 
-    @Value("${actor.age}")
     private int age;
 
-//    @Value("${actor.name}")
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//     @Value("${actor.gender}")
-//    public void setGender(String gender) {
-//        this.gender = gender;
-//    }
-//
-//     @Value("${actor.age}")
-//    public void setAge(int age) {
-//        this.age = age;
-//    }
+    public Actor(String name, String gender, int age) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+    }
+
 
     public void actorInformation(){
 
-        System.out.println("name of the actor:"+name+"\n age of the actor is:"+age+"\n gender of the actor is:"+gender);
+        System.out.println("name of the actor:"+this.name+"\n age of the actor is:"+this.age+"\n gender of the actor is:"+this.gender);
 
     }
 }

@@ -1,27 +1,32 @@
 package com.stackroute.domain;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.stereotype.Component;
+
+import org.springframework.context.annotation.*;
+
 
 @Configuration
-@ComponentScan(basePackages = "com.stackroute")
-@PropertySource("classpath:actorinfo.properties")
+@PropertySource(value = "classpath:actorinfo.properties")
 public class MovieConfig {
 
     @Bean
     public Actor actorBean(){
 
-        return new Actor();
+       return new Actor("ram","male",21);
     }
 
-    @Bean
-    public Movie movieBean(){
+    @Bean(name = {"ramMovie","ramMovie1"})
+    @Scope("prototype")
 
-        Movie movie=new Movie();
-        movie.setActor(actorBean());
-        return movie;
+    public Movie ram()
+    {
+
+        return new Movie(actorBean());
     }
+
+//    @Bean
+//    @Scope("prototype")
+//    public Movie rammovie1(){
+//
+//        return new Movie(actorBean());
+//    }
 }
