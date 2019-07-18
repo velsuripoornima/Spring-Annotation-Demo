@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 
 public class Actor {
 
-    @Value("${actor.name}")
+    @Value("${actor.name}") //getting value from properties file
     private String name;
 
-    @Value("${actor.gender}")
+    @Value("${actor.gender}") //getting value from properties file
     private String gender;
 
-    @Value("${actor.age}")
+    @Value("${actor.age}")//getting value from properties file
     private int age;
 
 //    @Value("${actor.name}")
