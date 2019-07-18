@@ -10,6 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //display using the application context
         ApplicationContext context=new AnnotationConfigApplicationContext(MovieConfig.class);
         Movie movie=context.getBean( "ramMovie",Movie.class);
         movie.displayInfo();
@@ -17,7 +18,7 @@ public class Main {
         Movie movie1=context.getBean( "ramMovie1",Movie.class);
         movie1.displayInfo();
 
-        System.out.println(movie == movie1);
+        System.out.println(movie == movie1); //resulting false
 
 
     }
