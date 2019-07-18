@@ -4,11 +4,16 @@ package com.stackroute.domain;
 import org.springframework.context.annotation.*;
 
 
-@Configuration
-@PropertySource(value = "classpath:actorinfo.properties")
+@Configuration  
+//indicating the this is configuration file or not
+
+@PropertySource(value = "classpath:actorinfo.properties") 
+//getting values from properties file
+
 public class MovieConfig {
 
-    @Bean
+    @Bean  //for creating the bean
+    
     public Actor actorBean(){
 
        return new Actor("ram","male",21);
