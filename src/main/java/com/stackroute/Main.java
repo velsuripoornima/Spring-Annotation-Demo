@@ -10,6 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //display using the application context
         ApplicationContext context=new AnnotationConfigApplicationContext(MovieConfig.class);
         Movie movie=context.getBean("movieBean", Movie.class);
         movie.displayInfo();
