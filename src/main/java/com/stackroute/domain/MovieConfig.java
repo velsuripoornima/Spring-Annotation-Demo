@@ -5,17 +5,17 @@ import com.stackroute.demo.BeanLifecycleDemoBean;
 import com.stackroute.demo.BeanPostProcessorDemoBean;
 import org.springframework.context.annotation.*;
 
-
+//indicating  this is configuration file or not
 @Configuration
 public class MovieConfig {
 
-    @Bean
+    @Bean   //for creating the bean
     public Actor actorBean(){
 
        return new Actor("ram","male",21);
     }
 
-    @Bean
+    @Bean  //for creating the bean
 
     public Movie ram()
     {
