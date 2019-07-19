@@ -3,6 +3,7 @@ package com.stackroute.domain;
 
 import org.springframework.stereotype.Component;
 
+ //indicate to resolver this is a class ,for this create a object
 @Component
 
 public class Actor {
@@ -13,6 +14,7 @@ public class Actor {
 
     private int age;
 
+    //creating parameter constructor
     public Actor(String name, String gender, int age) {
         this.name = name;
         this.gender = gender;
