@@ -4,17 +4,17 @@ package com.stackroute.domain;
 import com.stackroute.demo.BeanLifecycleDemoBean;
 import org.springframework.context.annotation.*;
 
-
+ //indicating the this is configuration file or not
 @Configuration
 public class MovieConfig {
 
-    @Bean
+    @Bean //for creating the bean
     public Actor actorBean(){
 
        return new Actor("ram","male",21);
     }
 
-    @Bean
+    @Bean  //for creating the bean
 
     public Movie ram()
     {
