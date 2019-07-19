@@ -7,13 +7,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class Movie {
 
-    @Autowired
+    @Autowired //handling null pointer exception
     private Actor actor;
 
     public Movie(){
 
     }
 
+    //constructor for actor class
     public Movie(Actor actor) {
         this.actor = actor;
     }
