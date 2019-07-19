@@ -10,10 +10,11 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
-
+ //indicate to resolver this is a class ,for this create a object
 @Component
 public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNameAware {
 
+    //handling nullpointer Exception
     @Autowired
     private Actor actor;
 
@@ -21,6 +22,7 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
 
     }
 
+        //constructor for actor class
     public Movie(Actor actor) {
         this.actor = actor;
     }
@@ -36,16 +38,19 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
         actor.actorInformation();
     }
 
+    //inbuit method for ApplicationContextAware
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 
         System.out.println("implementing ApplicationContextAware .....");
     }
 
+    //inbuit method for beanfactory demo
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
 
         System.out.println("Implementing beanfactoryAware .....");
     }
 
+    //inbuit method for beannameaware
     public void setBeanName(String s) {
 
         System.out.println("Implementing beanNameAware.....");
